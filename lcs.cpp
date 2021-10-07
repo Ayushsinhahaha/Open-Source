@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void lcsAlgo(char *S1, char *S2, int m, int n) {
+void lcsAlgo(char *S1, char *S2, int m, int n){
   int LCS_table[m + 1][n + 1];
   for (int i = 0; i <= m; i++) {
     for (int j = 0; j <= n; j++) {
@@ -12,8 +12,7 @@ void lcsAlgo(char *S1, char *S2, int m, int n) {
       else if (S1[i - 1] == S2[j - 1])
         LCS_table[i][j] = LCS_table[i - 1][j - 1] + 1;
       else
-        LCS_table[i][j] = max(LCS_table[i - 1][j], LCS_table[i][j - 1]);
-    }
+        LCS_table[i][j] = max(LCS_table[i - 1][j], LCS_table[i][j - 1]); }
   }
 
   int index = LCS_table[m][n];
